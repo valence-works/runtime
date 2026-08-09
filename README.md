@@ -15,12 +15,12 @@ direct access to the person who wrote the engine.
 >
 > Valence Runtime is not generally available yet. Right now:
 >
-> - **Community images are published as `valenceworks/elsa-pro-*` on Docker Hub.** They will be
->   **renamed to `valenceworks/elsa-ce-*`**. If you are pulling `elsa-pro-*` today, you are using
->   what will become the Community edition — a migration notice will be published here before
->   anything changes.
-> - **Paid images on `ghcr.io/valence-works/*` do not exist yet.** Commands below that reference
->   GHCR will not work until launch.
+> - **Subscriptions are not open yet.** Prices are published so you can plan; get in touch to
+>   discuss a tier or request access.
+> - **Community images are free and need no account** — `ghcr.io/valence-works/runtime-ce-*`,
+>   pullable without login. They are the *same build* the paid tiers get.
+> - **If you pulled `valenceworks/elsa-pro-*` from Docker Hub**, those still work but are no longer
+>   updated. New builds publish to GHCR.
 > - **Elsa 3.8 is still in preview.** These images track `3.8.0-preview.*`.
 > - Hardening (non-root, minimal base, CVE gating, SBOM, signing) is **in progress**, not done.
 >   Do not treat current images as hardened.
@@ -36,8 +36,8 @@ direct access to the person who wrote the engine.
 | Price / year | Free | **€1,500** | **€4,500** | **€25,000** |
 | Availability | Open | Open | Open | **3 slots** |
 | Registry | Public | GHCR, private | GHCR, private | GHCR, private |
-| Hardened, signed, SBOM | — | ✅ | ✅ | ✅ |
-| Security patch cadence | — | ✅ | ✅ | ✅ |
+| Hardened, signed, SBOM | ✅ *same build* | ✅ | ✅ | ✅ |
+| Security patch **commitment** | — | ✅ | ✅ | ✅ |
 | Immutable version tags | — | ✅ | ✅ | ✅ |
 | Bug reports triaged | Public queue | 5 business days | 2 business days | 1 business day |
 | Backports to your pinned minor | — | — | ✅ | ✅ |
@@ -59,11 +59,14 @@ Full details, inclusions and exclusions:
 
 | Image | Elsa API | Studio UI | Use when |
 |---|:---:|:---:|---|
-| `elsa-*-server` | ✅ | — | Backend only; Studio deployed separately or not at all |
-| `elsa-*-studio` | — | ✅ | Studio UI pointing at an existing Elsa API |
-| `elsa-*-combined` | ✅ | ✅ | Everything in one container, one origin — simplest option |
+| `runtime-*-server` | ✅ | — | Backend only; Studio deployed separately or not at all |
+| `runtime-*-studio` | — | ✅ | Studio UI pointing at an existing Elsa API |
+| `runtime-*-combined` | ✅ | ✅ | Everything in one container, one origin — simplest option |
 
-Replace `*` with `ce` (Community) or `pro` (paid). More detail:
+All live under `ghcr.io/valence-works/`. Community images carry a `ce-` prefix
+(`runtime-ce-server`) and are public; paid images drop it (`runtime-server`) and are private. The
+bits are identical — see [Pulling Images](https://github.com/valence-works/runtime/wiki/Pulling-Images).
+More detail:
 **[Choosing an Image](https://github.com/valence-works/runtime/wiki/Choosing-an-Image)**
 
 ---
@@ -77,7 +80,7 @@ docker run -d --name elsa-pro -p 8080:8080 \
   -e CShells__Shells__Default__Features__DefaultAdminUser__AdminUsername=admin \
   -e CShells__Shells__Default__Features__DefaultAdminUser__AdminPassword='ChangeThisPassword123!' \
   -e CShells__Shells__Default__Features__Identity__SigningKey="$(openssl rand -base64 32)" \
-  valenceworks/elsa-pro-combined:latest
+  ghcr.io/valence-works/runtime-ce-combined:latest
 ```
 
 Then open **http://localhost:8080** and sign in with the username and password you just set.
@@ -93,8 +96,8 @@ Out of the box this uses SQLite inside the container, so **data is lost when the
 removed**. That is fine for a first look and wrong for anything else — see
 [Persistence & Databases](https://github.com/valence-works/runtime/wiki/Persistence-and-Databases).
 
-> The image name above is the current Community image. After the rename it becomes
-> `valenceworks/elsa-ce-combined`.
+> That is the free Community image — no account or login needed. Subscribers use
+> `ghcr.io/valence-works/runtime-combined`, which is the same build with commitments attached.
 
 ### Separate server and Studio
 
@@ -106,12 +109,12 @@ docker run -d --name elsa-server --network elsa -p 8080:8080 \
   -e CShells__Shells__Default__Features__DefaultAdminUser__AdminPassword='ChangeThisPassword123!' \
   -e CShells__Shells__Default__Features__Identity__SigningKey="$(openssl rand -base64 32)" \
   -e Elsa__Cors__AllowedOrigins__0=http://localhost:8081 \
-  valenceworks/elsa-pro-server:latest
+  ghcr.io/valence-works/runtime-ce-server:latest
 
 docker run -d --name elsa-studio --network elsa -p 8081:8080 \
   -e Studio__HostingModel=WebAssembly \
   -e Studio__Client__Backend__Url=http://localhost:8080/elsa/api \
-  valenceworks/elsa-pro-studio:latest
+  ghcr.io/valence-works/runtime-ce-studio:latest
 ```
 
 Studio is on **http://localhost:8081**.
