@@ -31,15 +31,20 @@ direct access to the person who wrote the engine.
 
 ## Editions
 
-| | **Community** | **Self-Serve** | **Supported** | **Partner** |
+| | **Community** | **Runtime** | **Runtime Priority** | **Maintainer Access** |
 |---|---|---|---|---|
 | Price | Free | Contact us | Contact us | Contact us |
-| Registry | Docker Hub, public | GHCR, private | GHCR, private | GHCR, private |
+| Availability | Open | Open | Open | **3 slots** |
+| Registry | Public | GHCR, private | GHCR, private | GHCR, private |
 | Hardened, signed, SBOM | — | ✅ | ✅ | ✅ |
-| Security patch commitment | — | ✅ | ✅ | ✅ |
+| Security patch cadence | — | ✅ | ✅ | ✅ |
 | Immutable version tags | — | ✅ | ✅ | ✅ |
-| Direct maintainer access | — | — | ✅ | ✅ |
-| Response guarantee | — | — | 2 business days | Next business day |
+| Bug reports triaged | Public queue | 5 business days | 2 business days | 1 business day |
+| Backports to your pinned minor | — | — | ✅ | ✅ |
+| Direct channel to the maintainer | — | — | — | ✅ |
+
+**Triage is committed; a fix is not.** Every report gets a written answer within your tier's window —
+accepted with a target release, needs information, won't fix with a reason, or already fixed.
 
 Pricing is not published yet — the tier structure is settled, the numbers aren't. Full details,
 inclusions and exclusions:
