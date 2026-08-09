@@ -33,7 +33,7 @@ direct access to the person who wrote the engine.
 
 | | **Community** | **Runtime** | **Runtime Priority** | **Maintainer Access** |
 |---|---|---|---|---|
-| Price | Free | Contact us | Contact us | Contact us |
+| Price / year | Free | **€1,500** | **€4,500** | **€25,000** |
 | Availability | Open | Open | Open | **3 slots** |
 | Registry | Public | GHCR, private | GHCR, private | GHCR, private |
 | Hardened, signed, SBOM | — | ✅ | ✅ | ✅ |
@@ -46,8 +46,11 @@ direct access to the person who wrote the engine.
 **Triage is committed; a fix is not.** Every report gets a written answer within your tier's window —
 accepted with a target release, needs information, won't fix with a reason, or already fixed.
 
-Pricing is not published yet — the tier structure is settled, the numbers aren't. Full details,
-inclusions and exclusions:
+Prices are per year, EUR, excluding VAT. **Subscriptions are not open yet** — Valence Runtime is in
+Early Preview; get in touch to discuss a tier or request access. Existing subscribers keep their rate
+through at least their following renewal if prices change.
+
+Full details, inclusions and exclusions:
 **[Editions & Support](https://github.com/valence-works/runtime/wiki/Editions-and-Support)**
 
 ---
