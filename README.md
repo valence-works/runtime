@@ -22,8 +22,9 @@ direct access to the person who wrote the engine.
 > - **If you pulled `valenceworks/elsa-pro-*` from Docker Hub**, those still work but are no longer
 >   updated. New builds publish to GHCR.
 > - **Elsa 3.8 is still in preview.** These images track `3.8.0-preview.*`.
-> - Hardening (non-root, minimal base, CVE gating, SBOM, signing) is **in progress**, not done.
->   Do not treat current images as hardened.
+> - **Images now run non-root (UID 1654) on a chiselled base** — 11 OS packages instead of 112,
+>   no shell, no package manager. CVE gating, SBOM and signing are in the pipeline and land with
+>   the next release.
 >
 > This repository is documentation and issue tracking only. There is no source here.
 
