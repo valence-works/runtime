@@ -1,19 +1,19 @@
-# Elsa Pro
+# Valence Runtime
 
 Production-ready container images for [Elsa Workflows](https://github.com/elsa-workflows/elsa-core) —
 built, hardened and patched by the maintainer of Elsa.
 
-Elsa Workflows is open source and always will be. Elsa Pro is the assembled, production-ready
+Elsa Workflows is open source and always will be. Valence Runtime is the assembled, production-ready
 distribution of it: pre-built images, a committed security patch cadence, and — on paid tiers —
 direct access to the person who wrote the engine.
 
-📖 **[Documentation Wiki](https://github.com/valence-works/elsa-pro/wiki)** ·
-🐛 **[Report an issue](https://github.com/valence-works/elsa-pro/issues)** ·
-💬 **[Discussions](https://github.com/valence-works/elsa-pro/discussions)**
+📖 **[Documentation Wiki](https://github.com/valence-works/runtime/wiki)** ·
+🐛 **[Report an issue](https://github.com/valence-works/runtime/issues)** ·
+💬 **[Discussions](https://github.com/valence-works/runtime/discussions)**
 
 > ### ⚠️ Pre-launch — read this first
 >
-> Elsa Pro is not generally available yet. Right now:
+> Valence Runtime is not generally available yet. Right now:
 >
 > - **Community images are published as `valenceworks/elsa-pro-*` on Docker Hub.** They will be
 >   **renamed to `valenceworks/elsa-ce-*`**. If you are pulling `elsa-pro-*` today, you are using
@@ -43,7 +43,7 @@ direct access to the person who wrote the engine.
 
 Pricing is not published yet — the tier structure is settled, the numbers aren't. Full details,
 inclusions and exclusions:
-**[Editions & Support](https://github.com/valence-works/elsa-pro/wiki/Editions-and-Support)**
+**[Editions & Support](https://github.com/valence-works/runtime/wiki/Editions-and-Support)**
 
 ---
 
@@ -56,7 +56,7 @@ inclusions and exclusions:
 | `elsa-*-combined` | ✅ | ✅ | Everything in one container, one origin — simplest option |
 
 Replace `*` with `ce` (Community) or `pro` (paid). More detail:
-**[Choosing an Image](https://github.com/valence-works/elsa-pro/wiki/Choosing-an-Image)**
+**[Choosing an Image](https://github.com/valence-works/runtime/wiki/Choosing-an-Image)**
 
 ---
 
@@ -83,7 +83,7 @@ Then open **http://localhost:8080** and sign in with the username and password y
 
 Out of the box this uses SQLite inside the container, so **data is lost when the container is
 removed**. That is fine for a first look and wrong for anything else — see
-[Persistence & Databases](https://github.com/valence-works/elsa-pro/wiki/Persistence-and-Databases).
+[Persistence & Databases](https://github.com/valence-works/runtime/wiki/Persistence-and-Databases).
 
 > The image name above is the current Community image. After the rename it becomes
 > `valenceworks/elsa-ce-combined`.
@@ -111,7 +111,7 @@ Studio is on **http://localhost:8081**.
 ⚠️ In the default WebAssembly mode the **browser** calls the API directly, so
 `Studio__Client__Backend__Url` must be reachable from your browser — not from inside the Docker
 network — and the server needs a matching CORS origin. This is the single most common setup mistake;
-[Running the Images](https://github.com/valence-works/elsa-pro/wiki/Running-the-Images) explains both
+[Running the Images](https://github.com/valence-works/runtime/wiki/Running-the-Images) explains both
 hosting models.
 
 ---
@@ -120,16 +120,16 @@ hosting models.
 
 | Page | What's in it |
 |---|---|
-| [Getting Started](https://github.com/valence-works/elsa-pro/wiki/Getting-Started) | First run, in more detail than above |
-| [Choosing an Image](https://github.com/valence-works/elsa-pro/wiki/Choosing-an-Image) | Server vs Studio vs Combined, hosting models |
-| [Pulling Images](https://github.com/valence-works/elsa-pro/wiki/Pulling-Images) | Registries, private registry authentication, tags and pinning |
-| [Running the Images](https://github.com/valence-works/elsa-pro/wiki/Running-the-Images) | Docker run, Compose, Kubernetes notes, health probes |
-| [Configuration](https://github.com/valence-works/elsa-pro/wiki/Configuration) | Precedence, `/config/config.json`, environment variable reference |
-| [Persistence & Databases](https://github.com/valence-works/elsa-pro/wiki/Persistence-and-Databases) | SQLite, PostgreSQL, other providers, volumes |
-| [Extending with Nuplane](https://github.com/valence-works/elsa-pro/wiki/Extending-with-Nuplane) | Adding database providers, message buses, schedulers at runtime |
-| [Production Checklist](https://github.com/valence-works/elsa-pro/wiki/Production-Checklist) | What to change before going live |
-| [Troubleshooting](https://github.com/valence-works/elsa-pro/wiki/Troubleshooting) | Common failures and how to diagnose them |
-| [Editions & Support](https://github.com/valence-works/elsa-pro/wiki/Editions-and-Support) | Tiers, what's included, where to get help |
+| [Getting Started](https://github.com/valence-works/runtime/wiki/Getting-Started) | First run, in more detail than above |
+| [Choosing an Image](https://github.com/valence-works/runtime/wiki/Choosing-an-Image) | Server vs Studio vs Combined, hosting models |
+| [Pulling Images](https://github.com/valence-works/runtime/wiki/Pulling-Images) | Registries, private registry authentication, tags and pinning |
+| [Running the Images](https://github.com/valence-works/runtime/wiki/Running-the-Images) | Docker run, Compose, Kubernetes notes, health probes |
+| [Configuration](https://github.com/valence-works/runtime/wiki/Configuration) | Precedence, `/config/config.json`, environment variable reference |
+| [Persistence & Databases](https://github.com/valence-works/runtime/wiki/Persistence-and-Databases) | SQLite, PostgreSQL, other providers, volumes |
+| [Extending with Nuplane](https://github.com/valence-works/runtime/wiki/Extending-with-Nuplane) | Adding database providers, message buses, schedulers at runtime |
+| [Production Checklist](https://github.com/valence-works/runtime/wiki/Production-Checklist) | What to change before going live |
+| [Troubleshooting](https://github.com/valence-works/runtime/wiki/Troubleshooting) | Common failures and how to diagnose them |
+| [Editions & Support](https://github.com/valence-works/runtime/wiki/Editions-and-Support) | Tiers, what's included, where to get help |
 
 ---
 
@@ -141,8 +141,8 @@ your private channel for anything.
 | Your problem is | Go to |
 |---|---|
 | An Elsa **engine** bug or feature request | [elsa-workflows/elsa-core](https://github.com/elsa-workflows/elsa-core/issues) — that's where fixes land |
-| An **image, packaging or deployment** problem | [Issues on this repo](https://github.com/valence-works/elsa-pro/issues) |
-| A question, or "how do I…" | [Discussions](https://github.com/valence-works/elsa-pro/discussions) |
+| An **image, packaging or deployment** problem | [Issues on this repo](https://github.com/valence-works/runtime/issues) |
+| A question, or "how do I…" | [Discussions](https://github.com/valence-works/runtime/discussions) |
 | Billing, licensing, subscriptions | _Commercial contact — pending_ |
 | A suspected **security vulnerability** | _Security contact — pending_. Please do not use public trackers |
 
@@ -162,5 +162,5 @@ commitment. Public channels here are best-effort.
 
 ---
 
-<sub>Elsa Pro is a product of Valence Works. Elsa Workflows is an open source project by the same
+<sub>Valence Runtime is a product of Valence Works. Elsa Workflows is an open source project by the same
 maintainer and remains freely available.</sub>
