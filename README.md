@@ -20,11 +20,11 @@ direct access to the person who wrote the engine.
 > - **Community images are free and need no account** — `ghcr.io/valence-works/runtime-ce-*`,
 >   pullable without login. They are the *same build* the paid tiers get.
 > - **If you pulled `valenceworks/elsa-pro-*` from Docker Hub**, those still work but are no longer
->   updated. New builds publish to GHCR.
+>   updated. Community builds now publish to GHCR; paid builds to a private registry.
 > - **Elsa 3.8 is still in preview.** These images track `3.8.0-preview.*`.
 > - **Images now run non-root (UID 1654) on a chiselled base** — 11 OS packages instead of 112,
->   no shell, no package manager. CVE gating, SBOM and signing are in the pipeline and land with
->   the next release.
+>   no shell, no package manager. Vulnerability scanning gates the build before publication, and
+>   every image is signed and ships an SBOM and build provenance.
 >
 > This repository is documentation and issue tracking only. There is no source here.
 
@@ -36,7 +36,7 @@ direct access to the person who wrote the engine.
 |---|---|---|---|---|
 | Price / year | Free | **€1,500** | **€4,500** | **€25,000** |
 | Availability | Open | Open | Open | **3 slots** |
-| Registry | Public | GHCR, private | GHCR, private | GHCR, private |
+| Registry | Public, no account | Private, token issued | Private, token issued | Private, token issued |
 | Hardened, signed, SBOM | ✅ *same build* | ✅ | ✅ | ✅ |
 | Security patch **commitment** | — | ✅ | ✅ | ✅ |
 | Immutable version tags | — | ✅ | ✅ | ✅ |
@@ -64,9 +64,10 @@ Full details, inclusions and exclusions:
 | `runtime-*-studio` | — | ✅ | Studio UI pointing at an existing Elsa API |
 | `runtime-*-combined` | ✅ | ✅ | Everything in one container, one origin — simplest option |
 
-All live under `ghcr.io/valence-works/`. Community images carry a `ce-` prefix
-(`runtime-ce-server`) and are public; paid images drop it (`runtime-server`) and are private. The
-bits are identical — see [Pulling Images](https://github.com/valence-works/runtime/wiki/Pulling-Images).
+Community images carry a `ce-` prefix (`ghcr.io/valence-works/runtime-ce-server`) and are public —
+no account, no login. Paid images drop the prefix (`runtime-server`) and live in a private registry
+you are issued a token for. The bits are identical, down to the manifest digest — see
+[Pulling Images](https://github.com/valence-works/runtime/wiki/Pulling-Images).
 More detail:
 **[Choosing an Image](https://github.com/valence-works/runtime/wiki/Choosing-an-Image)**
 
@@ -98,7 +99,7 @@ removed**. That is fine for a first look and wrong for anything else — see
 [Persistence & Databases](https://github.com/valence-works/runtime/wiki/Persistence-and-Databases).
 
 > That is the free Community image — no account or login needed. Subscribers use
-> `ghcr.io/valence-works/runtime-combined`, which is the same build with commitments attached.
+> `valenceruntimeimages.azurecr.io/runtime-combined`, which is the same build with commitments attached.
 
 ### Separate server and Studio
 
