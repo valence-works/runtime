@@ -1,9 +1,9 @@
-# Valence Runtime
+# Elsa Runtime
 
 Production-ready container images for [Elsa Workflows](https://github.com/elsa-workflows/elsa-core) —
 built, hardened and patched by the maintainer of Elsa.
 
-Elsa Workflows is open source and always will be. Valence Runtime is the assembled, production-ready
+Elsa Workflows is open source and always will be. Elsa Runtime is the assembled, production-ready
 distribution of it: pre-built images, a committed security patch cadence, and — on paid tiers —
 direct access to the person who wrote the engine.
 
@@ -13,7 +13,7 @@ direct access to the person who wrote the engine.
 
 > ### ⚠️ Pre-launch — read this first
 >
-> Valence Runtime is not generally available yet. Right now:
+> Elsa Runtime is not generally available yet. Right now:
 >
 > - **Subscriptions are not open yet.** Prices are published so you can plan; get in touch to
 >   discuss a tier or request access.
@@ -47,7 +47,7 @@ direct access to the person who wrote the engine.
 **Triage is committed; a fix is not.** Every report gets a written answer within your tier's window —
 accepted with a target release, needs information, won't fix with a reason, or already fixed.
 
-Prices are per year, EUR, excluding VAT. **Subscriptions are not open yet** — Valence Runtime is in
+Prices are per year, EUR, excluding VAT. **Subscriptions are not open yet** — Elsa Runtime is in
 Early Preview; get in touch to discuss a tier or request access. Existing subscribers keep their rate
 through at least their following renewal if prices change.
 
@@ -175,5 +175,5 @@ commitment. Public channels here are best-effort.
 
 ---
 
-<sub>Valence Runtime is a product of Valence Works. Elsa Workflows is an open source project by the same
+<sub>Elsa Runtime is a product of Valence Works. Elsa Workflows is an open source project by the same
 maintainer and remains freely available.</sub>
